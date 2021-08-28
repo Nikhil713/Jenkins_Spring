@@ -4,18 +4,17 @@ pipeline {
         maven 'Maven'
     }
     stages {
-        stage ('Initialize') {
+        stage ('Checkout SCM') {
             steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                ''' 
+                checkout scm
             }
         }
 
-        stage ('Build') {
+        stage ('Build docker-compose file') {
             steps {
-                echo 'This is a minimal pipeline.'
+                echo 'Building Docker-Compose file.'
+                sh 'docker-compose build'
+                sh 'docker-compose up -d'
             }
         }
     }
