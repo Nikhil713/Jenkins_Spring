@@ -1,0 +1,12 @@
+version: '3.4'
+
+services: 
+  maven_app:
+    image: maven_image:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports: 
+      - "8080:80"
+volumes: 
+  - "/var/run/docker.sock:/var/run/docker.sock"
