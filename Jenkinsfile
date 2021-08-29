@@ -12,7 +12,7 @@ pipeline {
 
         stage ('Build docker-compose file') {
             steps {
-                echo 'Building Docker-Compose file.'
+                sh 'mvn -f ./pom.xml clean install package'
                 sh 'docker-compose build'
                 sh 'docker-compose up -d'
             }
