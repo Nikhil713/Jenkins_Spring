@@ -1,8 +1,8 @@
 version: '3.4'
 
 services:
-  maven_project:
-    image: maven_project:latest
+  Jenkins_Spring:
+    image: Jenkins_Spring:latest
     build:
       context: .
       dockerfile: Dockerfile
