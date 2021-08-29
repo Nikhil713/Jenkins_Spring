@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage ('Checkout SCM') {
             steps {
-                checkout scm
+                git url: 'https://github.com/Nikhil713/Jenkins_Spring.git'
             }
         }
 
@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo 'Building Docker-Compose file.'
                 sh 'docker-compose build'
-                sh 'docker-compose up -d'
+                sh 'docker-compose up'
             }
         }
     }
