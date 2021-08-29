@@ -15,6 +15,11 @@ pipeline {
                 echo 'Building Docker-Compose file.'
                 sh '/usr/local/bin/docker-compose up --build'
             }
+            post{
+            	success{
+            		deploy adapters: [tomcat9(credentialsId: '58a5d23a-e2b5-407b-857b-5c911bdfb221', path: '', url: 'http://localhost:8085/')], contextPath: 'maven', war: '**/*.war'
+            	}
+            }
         }
     }
 }
