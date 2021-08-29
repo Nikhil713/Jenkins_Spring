@@ -13,8 +13,8 @@ pipeline {
         stage ('Build docker-compose file') {
             steps {
                 echo 'Building Docker-Compose file.'
-                sh 'echo jenkins | sudo -S sudo docker-compose build'
-                sh 'echo jenkins | sudo -S sudo docker-compose up'
+                sh 'echo "jenkins" | sudo -S sudo docker-compose build'
+                sh 'echo "jenkins" | sudo -S sudo docker-compose up'
             }
         }
     }
