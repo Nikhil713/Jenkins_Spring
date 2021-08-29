@@ -1,8 +1,8 @@
 version: '3.4'
 
 services:
-  maven_app:
-    image: maven_app:latest
+  maven_project:
+    image: maven_project:latest
     build:
       context: .
       dockerfile: Dockerfile
